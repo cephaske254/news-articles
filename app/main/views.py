@@ -26,5 +26,23 @@ def search(keywords):
     '''
     search_keywords = '+'.join( keywords.split(' '))
     search_results = get_news_articles('everything',f'q={search_keywords}',100)
-    return render_template('search.html',results = search_results, title=f'Search Results for {keywords}')
 
+    query = request.args.get('query')
+    if query:
+        return redirect(url_for('main.search',keywords = query))
+    else:
+        return render_template('search.html',results = search_results, title=f'Search Results for {keywords}')
+
+
+@main.route('/categories/<category_name>')
+def categoies(category_name):
+    '''
+    function that renders the categories.html to display news according to the category which the user chose
+    '''
+    category = get_news_articles('top-headlines',f'category={category_name}',100)
+
+    query = request.args.get('query')
+    if query:
+        return redirect(url_for('main.search',keywords = query))
+    else:
+        return render_template('categories.html',category=category, title = f'Categories | {category_name}',category_name=category_name)
