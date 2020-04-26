@@ -8,5 +8,10 @@
             <a href="#" class="nav-link">HOME</a>
         </li>
     </ul>
-    {{ wtf.quick_form(search_form,extra_classes='form-inline') }}
+    <form class="form-inline">
+        <div class="btn-group">
+            <input type="text" class="form-control form-control-sm" placeholder="Search..." name="q">
+            <button class="btn btn-sm btn-success">Search</button>
+        </div>
+    </form>
 </div>
