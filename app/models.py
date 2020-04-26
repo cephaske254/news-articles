@@ -5,7 +5,6 @@ class NewsSourceModel:
     def __init__(self,id,source):
         self.id = id
         self.source = source
-       
 
 class NewsArticleModel:
     def __init__(self,author,title,description,url,urlToImage,publishedAt,content):
