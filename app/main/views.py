@@ -26,5 +26,5 @@ def search(keywords):
     '''
     search_keywords = '+'.join( keywords.split(' '))
     search_results = get_news_articles('everything',f'q={search_keywords}',100)
-    return render_template('search.html',results = search_results)
+    return render_template('search.html',results = search_results, title=f'Search Results for {keywords}')
 
