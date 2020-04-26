@@ -1,5 +1,5 @@
 import unittest
-from app.models import NewsSourceModel
+from app.models import NewsSourceModel,NewsArticleModel
 
 class TestNewsSource(unittest.TestCase):
     def setUp(self):
@@ -10,4 +10,10 @@ class TestNewsSource(unittest.TestCase):
 
     def test_init(self):
         self.assertTrue(isinstance(self.new_source, NewsSourceModel))
-        
+
+
+class TestNewsArticleModel(unittest.TestCase):
+    def SetUp(self):
+    '''
+    '''
+    pass
