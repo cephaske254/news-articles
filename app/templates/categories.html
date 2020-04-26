@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
-{% import 'macro.html' as macro %}
+{% import 'macros.html' as macro %}
 
 {% block content %}
-
+<div class="container">
+    <h2 class="text-center text-capitalize">{{category_name}} News</h2>
+    {{macro.displayArticle(category)}}
+</div>
 {% endblock %}
