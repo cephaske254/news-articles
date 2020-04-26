@@ -1,0 +1,12 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+<div class="navbar navbar-light bg-light sticky-top navbar-expand-lg border-bottom border-secondary">
+    <button class="navbar-toggler" aria-expanded="false" data-toggle="collapse" data-target="#mobiNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="collapse navbar-collapse navbar-nav" id="mobiNav">
+        <li class="nav-item">
+            <a href="#" class="nav-link">HOME</a>
+        </li>
+    </ul>
+    {{ wtf.quick_form(search_form,extra_classes='form-inline') }}
+</div>
