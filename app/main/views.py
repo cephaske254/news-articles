@@ -13,10 +13,11 @@ def index():
     entertainment = get_news_articles('top-headlines','category=entertainment',4)
     business = get_news_articles('top-headlines','category=business',4)
     
-    if(request.args.get('query')
-
-
-    return render_template('index.html',title='Home | News General',general=general,science=science,technology=technology,health=health,entertainment=entertainment,business=business)
+    query = request.args.get('query')
+    if query:
+        return redirect(url_for('main.search',keywords = query))
+    else:
+        return render_template('index.html',title='Home | News General',general=general,science=science,technology=technology,health=health,entertainment=entertainment,business=business)
 
 @main.route('/search/<keywords>')
 def search(keywords):

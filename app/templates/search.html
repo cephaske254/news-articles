@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% import 'macros.html' as macro %}
 
+{% block content %}
 <div class="container">
     <h2>Results ({{results | count}})</h2>
     <hr>
-    {% macro.displayNews(results) %}
+    {{macro.displayArticle(results)}}
 </div>
+{% endblock %}
