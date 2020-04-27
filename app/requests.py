@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import NewsSourceModel,NewsArticleModel,NewsGeneralModel
+from .models import NewsSourceModel,NewsArticleModel
 
 api_key=None
 base_url=None
@@ -45,7 +45,7 @@ def process_results(news_articles_list,maximum):
         if i <= maximum:
             if(urlToImage == None):
                 urlToImage = 'static/images/default_news_image.png'
-            news_object = NewsGeneralModel(source,source_id,author,title,description,url,urlToImage,publishedAt,content)
+            news_object = NewsArticleModel(source,source_id,author,title,description,url,urlToImage,publishedAt,content)
             if content != None:
                 results.append(news_object)
     return results

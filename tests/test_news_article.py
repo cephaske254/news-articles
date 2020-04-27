@@ -6,7 +6,7 @@ class TestNewsArticleModel(unittest.TestCase):
         '''
         Setup method that will be run before every test
         '''
-        self.new_article =NewsArticleModel('author','title','description','url','urlToImage','publishedAt','content')
+        self.new_article =NewsArticleModel('source','source_id','author','title','description','url','urlToImage','publishedAt','content')
 
     def test_init(self):
         self.assertTrue(isinstance(self.new_article, NewsArticleModel))
