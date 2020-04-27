@@ -12,9 +12,8 @@ class NewsSourceModel:
         self.country = country
 
 class NewsArticleModel:
-    def __init__(self,source,source_id,author,title,description,url,urlToImage,publishedAt,content):
+    def __init__(self,source,author,title,description,url,urlToImage,publishedAt,content):
         self.source = source
-        self.source_id = source_id
         self.author = author
         self.title = title
         self.description = description

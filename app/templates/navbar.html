@@ -6,31 +6,28 @@
         <li class="nav-item">
             <a href="/" class="nav-link">HOME</a>
         </li>
-        <li class="nav-item">
-            <a href="/categories/general" class="nav-link">GENERAL</a>
+
+        <li class="nav-item dropdown">
+            <div class="nav-item-dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="categDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIES</a>
+                <div class="dropdown-menu" aria-labelledby="categDropDown">
+                    <a href="/categories/general" class="nav-link">GENERAL</a>
+                    <a href="/categories/health" class="nav-link">HEALTH</a>
+                    <a href="/categories/business" class="nav-link">BUSINESS</a>
+                    <a href="/categories/technology" class="nav-link">TECHNOLOGY</a>
+                    <a href="/categories/entertainment" class="nav-link">ENTERTAINMENT</a>
+                    <a href="/categories/sports" class="nav-link">SPORTS</a>
+                </div>
+            </div>
         </li>
+
         <li class="nav-item">
-            <a href="/categories/health" class="nav-link">HEALTH</a>
-        </li>
-        <li class="nav-item">
-            <a href="/categories/business" class="nav-link">BUSINESS</a>
-        </li>
-        <li class="nav-item">
-            <a href="/categories/technology" class="nav-link">TECHNOLOGY</a>
-        </li>
-        <li class="nav-item">
-            <a href="/categories/science" class="nav-link">SCIENCE</a>
-        </li>
-        <li class="nav-item">
-            <a href="/categories/entertainment" class="nav-link">ENTERTAINMENT</a>
-        </li>
-        <li class="nav-item">
-            <a href="/categories/sports" class="nav-link">SPORTS</a>
+            <a href="/sources" class="nav-link">SOURCES</a>
         </li>
     </ul>
     <form class="form-inline">
         <div class="btn-group">
-            <input type="text" class="form-control form-control-sm" placeholder="Search..." name="query">
+            <input class="form-control form-control-sm" placeholder="Search..." name="query" type="search" aria-label="Search">
             <button class="btn btn-sm btn-success">Search</button>
         </div>
     </form>

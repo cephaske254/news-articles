@@ -32,7 +32,6 @@ def process_results(news_articles_list,maximum):
     results = [] 
     i=0
     for news in news_articles_list:
-        source_id = news.get('source') 
         source = news.get('source') 
         author = news.get('author') 
         title = news.get('title')
@@ -45,10 +44,43 @@ def process_results(news_articles_list,maximum):
         if i <= maximum:
             if(urlToImage == None):
                 urlToImage = 'static/images/default_news_image.png'
-            news_object = NewsArticleModel(source,source_id,author,title,description,url,urlToImage,publishedAt,content)
+            news_object = NewsArticleModel(source,author,title,description,url,urlToImage,publishedAt,content)
             if content != None:
                 results.append(news_object)
     return results
 
 
+def get_sources(maximum):
+    sources_url = base_url.format('sources',api_key,'')
+
+    with urllib.request.urlopen(sources_url) as url:
+        sources_response = json.loads(url.read())
+        
+        sources_results = None
+
+        if sources_response:
+            sources_list = sources_response['sources']
+            sources_results = process_sources(sources_list,maximum)
+    return sources_results
+
+def process_sources(sources_list,maximum):
+    '''
+    function to generate a python dictionary containing sources
+    '''
+    sources=[]
+    i=0
+    for source in sources_list:
+        i+=1
+        if i <= maximum:
+            id=source.get('id')
+            name=source.get('name')
+            description=source.get('description')
+            url=source.get('url')
+            category=source.get('category')
+            language=source.get('language')
+            country=source.get('country')
+
+            source_object = NewsSourceModel(id,name,description,url,category,language,country)
+            sources.append(source_object)
+    return sources
 
